@@ -66,6 +66,14 @@
       <p class="boot-copy">Preparing the installable athlete and coach workspace.</p>
     </div>
   </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      const shell = document.getElementById('boot-shell');
+      if (shell) {
+        shell.remove();
+      }
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
