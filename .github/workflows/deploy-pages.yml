@@ -27,7 +27,12 @@ jobs:
         run: flutter test
 
       - name: Build web
-        run: flutter build web --release --base-href /dave-the-coach-flutter/
+        run: >-
+          flutter build web --release --base-href /dave-the-coach-flutter/
+          --dart-define=SUPABASE_URL=${{ vars.SUPABASE_URL }}
+          --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+          --dart-define=DAVE_WEBHOOK_URL=${{ vars.DAVE_WEBHOOK_URL }}
+          --dart-define=DAVE_WEBHOOK_SECRET=${{ secrets.DAVE_WEBHOOK_SECRET }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
