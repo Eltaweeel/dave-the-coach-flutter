@@ -9,5 +9,8 @@ void main() {
 
     expect(find.text('DAVE THE COACH'), findsOneWidget);
     expect(find.textContaining('athlete operating system'), findsOneWidget);
+    expect(find.text('Abdo training update'), findsOneWidget);
+    expect(find.text('Leg day skipped'), findsOneWidget);
+    expect(find.text('Pull day planned'), findsOneWidget);
   });
 }
