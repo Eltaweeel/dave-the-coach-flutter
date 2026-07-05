@@ -149,48 +149,6 @@ class PublicLandingScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 18),
-                    Container(
-                      padding: const EdgeInsets.all(22),
-                      decoration: _panelDecoration(),
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Abdo training update',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              fontSize: 20,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Wrap(
-                            spacing: 12,
-                            runSpacing: 12,
-                            children: [
-                              _UpdatePill(
-                                label: 'Last Thursday',
-                                value: 'Leg day skipped',
-                                icon: Icons.event_busy_rounded,
-                              ),
-                              _UpdatePill(
-                                label: 'Today',
-                                value: 'Pull day planned',
-                                icon: Icons.fitness_center_rounded,
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            'Dave should account for the missed legs session from last week and keep today focused on Pull Day.',
-                            style: TextStyle(
-                              color: Color(0xFF9BA6C7),
-                              height: 1.55,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 18),
                     Wrap(
                       spacing: 14,
                       runSpacing: 14,
@@ -365,53 +323,6 @@ class PublicLandingScreen extends StatelessWidget {
           offset: Offset(0, 16),
         ),
       ],
-    );
-  }
-}
-
-class _UpdatePill extends StatelessWidget {
-  const _UpdatePill({
-    required this.label,
-    required this.value,
-    required this.icon,
-  });
-
-  final String label;
-  final String value;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 260,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0x3328E0FF)),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: const Color(0xFFFFD166)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(label, style: const TextStyle(color: Color(0xFF9BA6C7))),
-                const SizedBox(height: 4),
-                Text(
-                  value,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
